@@ -1,0 +1,41 @@
+###################################################################
+# By Caio Rodrigues for UFCG photonics (2022)
+
+# Professor: Adolfo Hebster 
+
+# MMI Study
+
+# Lumerical MODE MMI Sweeps
+###################################################################
+
+###################################################################
+# PARAMETERS
+
+TapperSweep = 1; # Enable tappers width sweep
+TSRange = [1.05e-6,1.4e-6]; # Tapper sweep range
+TSPoints = 10; # Tapper sweep number of points
+
+###################################################################
+
+pMatrix = matrix(TSPoints);
+TRangeMatrix = linspace(TSRange(1),TSRange(2),TSPoints);
+
+if(TapperSweep == 1) {
+    for (i=1; i <= TSPoints  ;0){
+        text = "Progress: " + num2str(i) + "/" + num2str(TSPoints);
+        print(text);    
+        
+        switchtolayout;
+        select("Output Taper 1");
+        set("width_l",TRangeMatrix(i));
+        select("Output Taper 2");
+        set("width_l",TRangeMatrix(i));
+        run;
+        emepropagate;
+        
+        A = getresult("EME","user s matrix");
+        pMatrix(i) = (abs(A(2,1)))^2;
+        i = i+1;
+    }
+    plot(TRangeMatrix,pMatrix,"width","S21");
+}
