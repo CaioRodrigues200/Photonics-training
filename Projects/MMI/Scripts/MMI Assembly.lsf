@@ -66,6 +66,7 @@ if(SetToTappers == 1){
                  "x":-TLen/2, "z":0, "len":TLen,
                  "thickness":0.22e-6,
                  "width_l":TWidth,  
+                 "angle_side":90,  
                  "name":"Input Taper "+num2str(i)});
             set("y",(i/((Asy+1)*(InP+1))-0.5)*BdY_Span*(1-2*Asy)^i);
             i = i+1;
@@ -76,6 +77,7 @@ if(SetToTappers == 1){
                  "x":BdX_Span+TLen/2, "z":0, "len":TLen,
                  "thickness":0.22e-6,
                  "width_l":TWidth, 
+                 "angle_side":90, 
                  "name":"Output Taper "+num2str(i)});
             i = i+1;    
     }    

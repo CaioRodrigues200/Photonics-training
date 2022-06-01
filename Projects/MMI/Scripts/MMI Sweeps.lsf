@@ -11,31 +11,50 @@
 ###################################################################
 # PARAMETERS
 
-TapperSweep = 1; # Enable tappers width sweep
+SPar = [2,3]; # Ports to analyse S parameters (SX1)
+
+TapperSweep = 0; # Enable tappers width sweep
 TSRange = [1.05e-6,1.4e-6]; # Tapper sweep range
 TSPoints = 10; # Tapper sweep number of points
 
 ###################################################################
 
-pMatrix = matrix(TSPoints);
+# WARNING
+# All visualizers will be closed after script execution
+
+SParSz = size(SPar,1);
+pMatrix = matrix(TSPoints,SParSz);
 TRangeMatrix = linspace(TSRange(1),TSRange(2),TSPoints);
 
 if(TapperSweep == 1) {
-    for (i=1; i <= TSPoints  ;0){
+    selectpartial("Output Taper");
+    OutP = getnumber;
+    print("Tapper width sweep in progress...");
+    print("Number of output ports found: " + num2str(OutP));
+
+    for (i=1; i <= TSPoints  ;i=i+1){
         text = "Progress: " + num2str(i) + "/" + num2str(TSPoints);
         print(text);    
         
         switchtolayout;
-        select("Output Taper 1");
-        set("width_l",TRangeMatrix(i));
-        select("Output Taper 2");
-        set("width_l",TRangeMatrix(i));
+        for(j=i; j <= OutP ;j=j+1){
+            setnamed("Output Taper " +num2str(j),
+            "width_l",TRangeMatrix(i));
+        }
         run;
         emepropagate;
         
         A = getresult("EME","user s matrix");
-        pMatrix(i) = (abs(A(2,1)))^2;
-        i = i+1;
+        for(j=1 ; j <= SParSz ;j=j+1){
+            pMatrix(i,j) = (abs(A(SPar(j),1)))^2;
+        }
     }
-    plot(TRangeMatrix,pMatrix,"width","S21");
+    closeall;
+    P = matrixdataset("S parameters");
+    P.addparameter("Tapper width",TRangeMatrix); 
+    for(i=1; i<=SParSz ;i=i+1){
+        X = pMatrix(1:TSPoints, i);
+        P.addattribute("S"+num2str(SParSz(i))+"1" ,X);
+    }
+    visualize(P);
 }
