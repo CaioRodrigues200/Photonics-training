@@ -13,16 +13,20 @@
 
 SPar = [2,3]; # Ports to analyse S parameters (SX1)
 
-TapperSweep = 0; # Enable tappers width sweep
-TSRange = [1.05e-6,1.4e-6]; # Tapper sweep range
-TSPoints = 10; # Tapper sweep number of points
+TapperSweep = 1; # Enable tappers width sweep
+TSRange = [1e-6,1.4e-6]; # Tapper sweep range
+TSPoints = 15; # Tapper sweep number of points
+
+# to-do:
+# Body Width sweep
+# Body Length sweep
 
 ###################################################################
 
 # WARNING
 # All visualizers will be closed after script execution
 
-SParSz = size(SPar,1);
+SParSz = length(SPar);
 pMatrix = matrix(TSPoints,SParSz);
 TRangeMatrix = linspace(TSRange(1),TSRange(2),TSPoints);
 
@@ -37,7 +41,7 @@ if(TapperSweep == 1) {
         print(text);    
         
         switchtolayout;
-        for(j=i; j <= OutP ;j=j+1){
+        for(j=1; j <= OutP ;j=j+1){
             setnamed("Output Taper " +num2str(j),
             "width_l",TRangeMatrix(i));
         }
@@ -46,15 +50,21 @@ if(TapperSweep == 1) {
         
         A = getresult("EME","user s matrix");
         for(j=1 ; j <= SParSz ;j=j+1){
-            pMatrix(i,j) = (abs(A(SPar(j),1)))^2;
+            pMatrix(i,j) = abs(A(SPar(j),1))^2;
+            dMatrix(i,j) = 20*log10(abs(A(SPar(j),1)));
         }
     }
     closeall;
-    P = matrixdataset("S parameters");
-    P.addparameter("Tapper width",TRangeMatrix); 
+    P = matrixdataset("S parameters in Abs^2");
+    D = matrixdataset("S parameters in dB");
+    P.addparameter("Tapper width",TRangeMatrix);
+    D.addparameter("Tapper width",TRangeMatrix);  
     for(i=1; i<=SParSz ;i=i+1){
         X = pMatrix(1:TSPoints, i);
-        P.addattribute("S"+num2str(SParSz(i))+"1" ,X);
+        Y = dMatrix(1:TSPoints, i);
+        P.addattribute("S"+num2str(SPar(i))+"1" ,X);
+        D.addattribute("S"+num2str(SPar(i))+"1" ,Y);
     }
     visualize(P);
+    visualize(D);
 }
