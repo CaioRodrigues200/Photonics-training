@@ -1,0 +1,169 @@
+Ansys Lumerical 2022 R1.4 Eigenmode Expansion Solver Version 7.19.3044 (Linux 64bit)
+ expires (month/day/year): 5/2/2023
+using config file: Ansys Licensing set with ANSYSLMD_LICENSE_FILE
+license host: 1055@10.75.13.24
+current time: qui jun 2 21:22:49 2022
+Running on host: fotonica02-System-Product-Name
+Running lms file: /opt/lumerical/v221/bin/eme-engine -t 8 -remote -shared-solve-license QU5TWVNDTF9DT05URVhUX0RBVEE9PEFOU1lTQ0xfQ09OVEVYVF9EQVRBPjxJRD4xZDM2YzVmNC02ZTNjLTQ3NmItYTA2NC00NTMzN2ZlZjcyYTM8L0lEPjxUWVBFPkFQUF9ERUZJTkVEPC9UWVBFPjxOQU1FPmx1bV9zdGFuZGFyZF9zb2x2ZV9zaGFyZTwvTkFNRT48SEFORExFUj40NDUzMUBmb3RvbmljYTAyLVN5c3RlbS1Qcm9kdWN0LU5hbWU8L0hBTkRMRVI+PC9BTlNZU0NMX0NPTlRFWFRfREFUQT4KQU5TWVNfQ09OVEVYVF9JRD0xZDM2YzVmNC02ZTNjLTQ3NmItYTA2NC00NTMzN2ZlZjcyYTMKQU5TWVNfQ09OVEVYVF9TRVJWRVI9NDQ1MzFAZm90b25pY2EwMi1TeXN0ZW0tUHJvZHVjdC1OYW1lCg== /home/trainner/Documents/GitHub/Photonics-training/Projects/MMI/Lumerical files/MMIProject.lms
+Running MODE Simulation
+Starting meshing
+Simulation size in gridpoints: 1 x 124 x 63
+Refined 0 mesh cells (0%)
+Completed meshing!
+Meshing complete in 0.005218 seconds of CPU time
+Starting meshing
+Simulation size in gridpoints: 1 x 124 x 63
+Refined 0 mesh cells (0%)
+Completed meshing!
+Meshing complete in 0.002162 seconds of CPU time
+Starting meshing
+Simulation size in gridpoints: 1 x 124 x 63
+Refined 0 mesh cells (0%)
+Completed meshing!
+Meshing complete in 0.001942 seconds of CPU time
+Starting meshing
+Simulation size in gridpoints: 1 x 124 x 63
+Refined 0 mesh cells (0%)
+Completed meshing!
+Meshing complete in 0.009971 seconds of CPU time
+Starting meshing
+Simulation size in gridpoints: 1 x 124 x 63
+Refined 0 mesh cells (0%)
+Completed meshing!
+Meshing complete in 0.010639 seconds of CPU time
+Starting meshing
+Simulation size in gridpoints: 1 x 124 x 63
+Refined 0 mesh cells (0%)
+Completed meshing!
+Meshing complete in 0.008652 seconds of CPU time
+Starting meshing
+Simulation size in gridpoints: 1 x 124 x 63
+Refined 0 mesh cells (0%)
+Completed meshing!
+Meshing complete in 0.010058 seconds of CPU time
+Starting meshing
+Simulation size in gridpoints: 1 x 124 x 63
+Refined 0 mesh cells (0%)
+Completed meshing!
+Meshing complete in 0.006105 seconds of CPU time
+Starting meshing
+Simulation size in gridpoints: 1 x 124 x 63
+Refined 0 mesh cells (0%)
+Completed meshing!
+Meshing complete in 0.005404 seconds of CPU time
+Starting meshing
+Simulation size in gridpoints: 1 x 124 x 63
+Refined 0 mesh cells (0%)
+Completed meshing!
+Meshing complete in 0.006667 seconds of CPU time
+Starting meshing
+Simulation size in gridpoints: 1 x 124 x 63
+Refined 0 mesh cells (0%)
+Completed meshing!
+Meshing complete in 0.005933 seconds of CPU time
+Starting meshing
+Simulation size in gridpoints: 1 x 124 x 63
+Refined 0 mesh cells (0%)
+Completed meshing!
+Meshing complete in 0.005447 seconds of CPU time
+Starting meshing
+Simulation size in gridpoints: 1 x 124 x 63
+Refined 0 mesh cells (0%)
+Completed meshing!
+Meshing complete in 0.012153 seconds of CPU time
+Starting meshing
+Simulation size in gridpoints: 1 x 124 x 63
+Refined 0 mesh cells (0%)
+Completed meshing!
+Meshing complete in 0.014751 seconds of CPU time
+Starting meshing
+Simulation size in gridpoints: 1 x 124 x 63
+Refined 0 mesh cells (0%)
+Completed meshing!
+Meshing complete in 0.013233 seconds of CPU time
+Starting meshing
+Simulation size in gridpoints: 1 x 124 x 63
+Refined 0 mesh cells (0%)
+Completed meshing!
+Meshing complete in 0.009147 seconds of CPU time
+Starting meshing
+Simulation size in gridpoints: 1 x 124 x 63
+Refined 0 mesh cells (0%)
+Completed meshing!
+Meshing complete in 0.013043 seconds of CPU time
+Starting meshing
+Simulation size in gridpoints: 1 x 124 x 63
+Refined 0 mesh cells (0%)
+Completed meshing!
+Meshing complete in 0.009298 seconds of CPU time
+Starting meshing
+Simulation size in gridpoints: 1 x 124 x 63
+Refined 0 mesh cells (0%)
+Completed meshing!
+Meshing complete in 0.014033 seconds of CPU time
+Starting meshing
+Simulation size in gridpoints: 1 x 124 x 63
+Refined 0 mesh cells (0%)
+Completed meshing!
+Meshing complete in 0.015434 seconds of CPU time
+Starting meshing
+Simulation size in gridpoints: 1 x 124 x 63
+Refined 0 mesh cells (0%)
+Completed meshing!
+Meshing complete in 0.012365 seconds of CPU time
+Time to calculate modes :  19.2484
+Time to normalize fields and orthogonalize degenerate modes :  0.671148
+Starting meshing
+Simulation size in gridpoints: 1 x 124 x 63
+Refined 0 mesh cells (0%)
+Completed meshing!
+Meshing complete in 0.001652 seconds of CPU time
+Starting meshing
+Simulation size in gridpoints: 1 x 124 x 63
+Refined 0 mesh cells (0%)
+Completed meshing!
+Meshing complete in 0.001495 seconds of CPU time
+Starting meshing
+Simulation size in gridpoints: 1 x 124 x 63
+Refined 0 mesh cells (0%)
+Completed meshing!
+Meshing complete in 0.001681 seconds of CPU time
+Starting meshing
+Simulation size in gridpoints: 1 x 36 x 63
+Refined 0 mesh cells (0%)
+Completed meshing!
+Meshing complete in 0.001386 seconds of CPU time
+Starting meshing
+Simulation size in gridpoints: 1 x 36 x 63
+Refined 0 mesh cells (0%)
+Completed meshing!
+Meshing complete in 0.001191 seconds of CPU time
+Starting meshing
+Simulation size in gridpoints: 1 x 36 x 63
+Refined 0 mesh cells (0%)
+Completed meshing!
+Meshing complete in 0.001009 seconds of CPU time
+Starting meshing
+Simulation size in gridpoints: 1 x 36 x 63
+Refined 0 mesh cells (0%)
+Completed meshing!
+Meshing complete in 0.003902 seconds of CPU time
+Starting meshing
+Simulation size in gridpoints: 1 x 36 x 63
+Refined 0 mesh cells (0%)
+Completed meshing!
+Meshing complete in 0.002985 seconds of CPU time
+Starting meshing
+Simulation size in gridpoints: 1 x 36 x 63
+Refined 0 mesh cells (0%)
+Completed meshing!
+Meshing complete in 0.002915 seconds of CPU time
+Time to calculate overlaps : 6.70475
+Overall wall time measurements in seconds : 26.6248
+Simulation completed successfully at: qui jun 2 21:23:16 2022
+Overall EME run time, measurements in seconds: 27.3811
+Total number of processes used by EME simulation : 1
+Not connected to a server for Licensing Client Proxy actions.
+
+Not connected to a server for Licensing Client Proxy actions.
+
