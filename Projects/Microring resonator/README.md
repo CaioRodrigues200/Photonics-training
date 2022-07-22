@@ -2,7 +2,7 @@
 
 A microring resonator is a looping photo-conductor device that utilizes resonnace phenomenon to filter or deliver energy from different silicon buses. There are originally two types of microring resonator layouts: All-pass and Add-drop.
 
-## All-pass ring resonator
+## All-pass ring resonator 
 All-pass ring resonator is its simplest form, consisting by feeding one output of a directional coupler back into its input, while the other waveguide of the pair stays unchanged, often called bus waveguide.
 
 ![All Pass Scheme](Media/All-Pass-Scheme.png)
@@ -26,7 +26,7 @@ It relates to the power attenuation coefficient $\alpha$ [1/cm] as $a^{2} = e^{-
 
 ![DC Transmission Coefficients](Media/DCTransmissionCoefs.png) ![RR Transmission Coefficients](Media/RRTransmissionCoefs.png)
 
-Assuming no reflections back into the bus waveguide, can be stated that the ratio between the transmited and incident field on it is:
+The basic spectral properties of an All-pass-filter (APF) ring resonator can easily be derived by assuming continuous wave (CW) operation and matching fields. Assuming no reflections back into the bus waveguide, can be stated that the ratio between the transmited and incident field on it is:
 
 ![Transmited Field Ratio](Media/TransmitedFieldRatio.png) (eq.1)
 
@@ -44,3 +44,25 @@ The effective phase shift $\varphi$ induced by the ring resonator can be calcula
 
 ![Transmission Ratio](Media/PhaseShift.png) (eq.4)
 
+Considering no instrinsic losses (a=1), can be plotted for different values of the self-coupling ratio coefficient r:
+
+<em>----(Pending graph)----</em>
+
+Considering $r$ = 0,85, can be plotted for different values of $a$:
+
+<em>----(Pending graph)----</em>
+
+
+## Add-drop ring resonator
+
+When the ring resonator is coupled to two waveguides, the incident field is partly transmitted to the drop port
+
+![Add drop Scheme](Media/Add-drop-Scheme.png)
+
+The transmission to the pass and the drop port can also be derived from continuous wave (CW) operation and matching the fields:
+
+![Transmission Pass on Add-drop](Media/TransmissionPass.png)(eq.5)
+
+![Transmission Drop on Add-drop](Media/TransmissionDrop.png)(eq.6)
+
+Where $T_{p}$ is the transmission to the pass port and $T_{d}$ the transmission to the drop port.
