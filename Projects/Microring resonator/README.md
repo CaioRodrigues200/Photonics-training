@@ -28,29 +28,31 @@ It relates to the power attenuation coefficient $\alpha$ [1/cm] as $a^{2} = e^{-
 
 The basic spectral properties of an All-pass-filter (APF) ring resonator can easily be derived by assuming continuous wave (CW) operation and matching fields. Assuming no reflections back into the bus waveguide, can be stated that the ratio between the transmited and incident field on it is:
 
-![Transmited Field Ratio](Media/TransmitedFieldRatio.png) (eq.1)
+![Transmited Field Ratio](Media/TransmitedFieldRatio.png) <em>(eq.1)</em>
 
-where $\phi = \beta L$ is the single-pass phase shift with $\beta$ being the [Propagation constant](https://www.rp-photonics.com/propagation_constant.html).
+where $\phi = \beta L$ is the single-pass phase shift with $\beta$ being the [Propagation constant](https://www.rp-photonics.com/propagation_constant.html). Notice that, if we know that $\beta = \frac{2\pi}{\lambda}$, then $\phi$ can be represented in funcion of wavelength as:
+
+$$ \phi = \frac{2\pi L}{\lambda} $$
 
 By squaring the (eq.1) it can be obtained the intensity transmission:
 
-![Transmission Ratio](Media/TransmissionRatio.png) (eq.2)
+![Transmission Ratio](Media/TransmissionRatio.png) <em>(eq.2)</em>
 
 Can be observed that the ring will be on resonance when the single-pass phase shift $\phi$ is a multiple of 2$\pi$, or when the wavelength of the light fits a whole number of times inside the [Optical length](https://www.microscopyu.com/tutorials/specimen-optical-path-length-variations) of the ring:
 
-![Transmission Ratio](Media/WavelengthFit.png) (eq.3)
+![Transmission Ratio](Media/WavelengthFit.png) <em>(eq.3)</em>
 
 The effective phase shift $\varphi$ induced by the ring resonator can be calculated manipulating (eq.1):
 
-![Transmission Ratio](Media/PhaseShift.png) (eq.4)
+![Transmission Ratio](Media/PhaseShift.png) <em>(eq.4)</em>
 
 Considering no instrinsic losses (a=1), can be plotted for different values of the self-coupling ratio coefficient r:
 
-<em>----(Pending graph)----</em>
+![Effective Phase delay r sweep](Media/Effective_phase_delay_r_sweep.png) <strong><em>(Effective phase shift delay ($\varphi$) x Single-pass phase shift ($\phi$))</em></strong>
 
 Considering $r$ = 0,85, can be plotted for different values of $a$:
 
-<em>----(Pending graph)----</em>
+![Effective Phase delay a sweep](Media/Effective_phase_delay_a_sweep.png) <strong><em>(Effective phase shift delay ($\varphi$) x Single-pass phase shift ($\phi$))</em></strong>
 
 
 ## Add-drop ring resonator
@@ -66,3 +68,34 @@ The transmission to the pass and the drop port can also be derived from continuo
 ![Transmission Drop on Add-drop](Media/TransmissionDrop.png)(eq.6)
 
 Where $T_{p}$ is the transmission to the pass port and $T_{d}$ the transmission to the drop port.
+
+
+
+## Spectral characteristics of ring resonator
+
+From equations (eq.2),(eq.5) and (eq.6) it can be derived both expressions for the full width at half maximum (FWHM) of the resonance spectrum of all-pass and add-drop ring resonators:
+
+![FWHM All pass](Media/All-pass-FWHM.png)(eq.7) <strong> (All-pass FWHM) </strong>
+
+![FWHM Add drop](Media/Add-drop-FWHM.png)(eq.8) <strong>  (Add-drop FWHM) </strong>
+
+Within a first order approximation of the dispersion, the wavelength range between two resonances or free spectral range (FSR) in function of wavelength equals:
+
+$$ FSR = \frac{\lambda_{c}^2}{n_{g} L} [m] $$ 
+
+And if given in frequency range, it can be converted in wavelength range using:
+
+$$ FSR = \frac{\lambda_{c}^2 \Delta f}{c} [m]$$ 
+
+Where $\lambda_{c}$ is the central wavelength of the range spectrum, $\Delta f$ the frequency range, $n_{g}$ the group index and $c$ the speed of light. The group index, and the corresponding group velocity $v_{g} = \frac{c}{n_{g}}$ , describes the velocity at which the envelope of a propagating pulse travels and is a characteristic of a dispersive medium (or waveguide). As $n_{g}$ takes into account the dispersion of the waveguide, hence it can be defined by:
+
+$$ n_{g} = n_{eff} - \lambda_{0} \frac{d n_{eff}}{d \lambda} $$
+
+Extracting results from the equations (eq.2), (eq.5) and (eq.6), we obtain the transmission below
+
+![Transmission on pass and drop ports](Media/Transmission_on_pass_and_drop_ports.png)
+
+So, it can be defined two new parameters: <strong>Finesse</strong> and <strong>Q-factor</strong>
+
+![Finesse](Media/Finesse.png)  ![Q-factor](Media/Q-factor.png)
+
