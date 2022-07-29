@@ -30,9 +30,9 @@ The basic spectral properties of an All-pass-filter (APF) ring resonator can eas
 
 ![Transmited Field Ratio](Media/TransmitedFieldRatio.png) <em>(eq.1)</em>
 
-where $\phi = \beta L$ is the single-pass phase shift with $\beta$ being the [Propagation constant](https://www.rp-photonics.com/propagation_constant.html). Notice that, if we know that $\beta = \frac{2\pi}{\lambda}$, then $\phi$ can be represented in funcion of wavelength as:
+where $\phi = \beta L$ is the single-pass phase shift with $\beta$ being the [Propagation constant](https://www.rp-photonics.com/propagation_constant.html). Notice that, if we know that $\beta = n_{eff}\frac{2\pi}{\lambda}$, then $\phi$ can be represented in funcion of wavelength as:
 
-$$ \phi = \frac{2\pi L}{\lambda} $$
+$$ \phi = n_{eff}\frac{2\pi L}{\lambda} $$
 
 By squaring the (eq.1) it can be obtained the intensity transmission:
 
@@ -58,8 +58,6 @@ Considering $r$ = 0,85, can be plotted for different values of $a$:
 ## Add-drop ring resonator
 
 When the ring resonator is coupled to two waveguides, the incident field is partly transmitted to the drop port
-
-![Add drop Scheme](Media/Add-drop-Scheme.png)
 
 The transmission to the pass and the drop port can also be derived from continuous wave (CW) operation and matching the fields:
 
