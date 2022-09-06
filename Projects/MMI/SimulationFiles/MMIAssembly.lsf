@@ -1,0 +1,191 @@
+###################################################################
+# By Caio Rodrigues for UFCG photonics (2022)
+
+# Professor: Adolfo Hebster 
+
+# MMI Study
+
+# Lumerical MODE MMI Device Assembly
+###################################################################
+
+###################################################################
+# FUNCTIONS
+
+function RectInsert(X,XSPAN,Y,YSPAN,Z,ZSPAN,MATERIAL){
+    
+    switchtolayout;
+    addrect;
+    set({"x":X,"y":Y,"z":Z,
+         "x span":XSPAN, "y span":YSPAN, "z span":ZSPAN,
+         "material":MATERIAL
+        });
+}
+###################################################################
+
+###################################################################
+# PARAMETERS
+
+# Body config------------------------------------
+BdX_Span = 31.87e-6; # Body X Span
+BdY_Span = 6e-6; # Body y Span
+
+
+# Ports config-----------------------------------
+
+# Array of output ports y positions 
+#(put 0 on first element to ignore this line)
+OutMx = [1.6e-6,-1.6e-6];
+# Array of input ports y positions 
+#(put 0 on first element to ignore this line)
+InMx = [0];
+
+# If the lines above has to be ignored, use these ones instead: 
+InP = 1; # Number of Input ports
+OutP = 2; # Number of Output ports
+Asy = 0; # Force asymmetry on inputs ports auto-displacement
+         # 0 -> Symetry, 1 -> Asymmetry
+         
+PYSpan_in = 12e-6; # Input Port Y Span 
+PYSpan_out = 3e-6; # Output Port Y Span 
+
+
+# Tappers config---------------------------------
+SetToTappers = 1; # Set tappers as inputs/outputs
+TLen = 4e-6; # Tapper Length
+TWidth = 1e-6; # Tapper Width
+
+
+# Mesh config------------------------------------
+MeshEnable = 0; # 1 for enable mesh insertion
+
+
+# EME config-------------------------------------
+EME_MC = 100; # Number of EME Mesh Cells (Y and Z)
+SideCells = 3; # Number of Cells on Input/Output groups
+
+###################################################################
+
+switchtolayout;
+selectall;
+delete;
+
+TLen = TLen*SetToTappers;
+
+if(InMx(1)!=0){
+    InP = length(InMx);}
+if(OutMx(1)!=0){
+    OutP = length(OutMx);}
+
+# Body setting -------------------------------------
+RectInsert(BdX_Span/2,BdX_Span, 0,BdY_Span, 0e-6,0.22e-6,
+"Si (Silicon) - Palik");
+set("name","MMI Body");
+
+
+# Input/Output ports setting -----------------------
+for (i=1; i <= InP ;i=i+1){
+    if(InMx(1)==0){
+        InY = (i/((Asy+1)*(InP+1))-0.5)*BdY_Span*(1-2*Asy)^i;}
+    else{
+        InY = InMx(i);}
+    RectInsert(-TLen-2e-6,4e-6 , InY,0.45e-6, 0,0.22e-6,
+    "Si (Silicon) - Palik");
+    set("name","MMI EnterPort "+num2str(i));
+}
+for (i=1; i <= OutP ;i=i+1){
+    if(OutMx(1)==0){
+        OutY = (i/(OutP+1)-0.5)*BdY_Span;}
+    else{
+        OutY = OutMx(i);}
+    RectInsert(BdX_Span+TLen+2e-6,4e-6, OutY,0.45e-6, 0,0.22e-6,
+    "Si (Silicon) - Palik");
+    set("name","MMI OutPort "+num2str(i));
+}
+
+if(SetToTappers == 1){
+    for (i=1; i <= InP ;i=i+1){
+        addobject("linear_taper");
+        set({"first axis":"z", "rotation 1":180,
+             "x":-TLen/2, "z":0, "len":TLen,
+             "thickness":0.22e-6,
+             "width_l":TWidth,  
+             "angle_side":90,  
+             "name":"Input Taper "+num2str(i)});
+        InY = getnamed("MMI EnterPort "+num2str(i),"y");
+        set("y",InY);
+    }
+    for (i=1; i <= OutP ;i=i+1){
+        addobject("linear_taper");
+        set({"first axis":"z", "rotation 1":0,
+             "x":BdX_Span+TLen/2, "z":0, "len":TLen,
+             "thickness":0.22e-6,
+             "width_l":TWidth, 
+             "angle_side":90, 
+             "name":"Output Taper "+num2str(i)});
+        OutY = getnamed("MMI OutPort "+num2str(i),"y");
+        set("y",OutY);
+    } 
+}
+
+
+# EME setting --------------------------------------
+addeme; 
+set({"allow custom eigensolver settings":1,
+     "display cells":1, "number of cell groups":3,
+     "group spans":[(1.3*TLen+4e-6)/2; BdX_Span; (1.3*TLen+4e-6)/2],
+     "cells":[SideCells; 1; SideCells],
+     "subcell method":[1; 0; 0], # 0 = none,  1 = CVCS
+     "modes":[10; 50; 10]});
+
+set({"x min":(-1.3*TLen-4e-6)/2 ,
+     "y":0, "y span":1.4*BdY_Span,
+     "z":0, "z span":4e-6});
+
+set({"y min bc":"PML", "y max bc":"PML",
+     "z min bc":"Symmetric", "z max bc":"PML",
+     "background material": "SiO2 (Glass) - Palik",
+     "mesh cells y":EME_MC, "mesh cells z":EME_MC});
+
+
+# EME Ports setting --------------------------------
+selectpartial("EME::Ports::port");
+delete;
+for(i=1; i <= InP ;i=i+1){ 
+    addemeport;
+    InY = getnamed("MMI EnterPort "+num2str(i),"y");
+    set({"use full simulation span":0,
+    "port location":"left",
+    "y":InY, "y span":PYSpan_in,
+    "z":0, "z span":4e-6});
+}  
+for(i=1; i <= OutP ;i=i+1){ 
+    addemeport;
+    OutY = getnamed("MMI OutPort "+num2str(i),"y");
+    set({"use full simulation span":0,
+    "port location":"right",
+    "y":OutY, "y span":PYSpan_out,
+    "z":0, "z span":4e-6});
+}      
+
+
+# Monitors setting ---------------------------------
+addemeprofile;
+set("x", BdX_Span/2);
+set("x span", BdX_Span+1.3*TLen+4e-6);
+set("y span", 1.4*BdY_Span);
+
+    
+# Mesh setting -------------------------------------
+if(MeshEnable == 1){
+    addmesh;
+    set({"x":-2e-6, "x span":0,
+        "y":0, "y span":BdY_Span,
+        "z":0, "z span":4e-6});
+    set("name","input_mesh");
+    
+    addmesh;
+    set({"x":BdX_Span+2e-6, "x span":0,
+        "y":0, "y span":BdY_Span,
+        "z":0, "z span":4e-6});
+    set("name","output_mesh");
+}

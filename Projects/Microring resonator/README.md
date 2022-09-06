@@ -5,7 +5,7 @@ A microring resonator is a looping photo-conductor device that utilizes resonnac
 ## All-pass ring resonator 
 All-pass ring resonator is its simplest form, consisting by feeding one output of a directional coupler back into its input, while the other waveguide of the pair stays unchanged, often called bus waveguide.
 
-![All Pass Scheme](Media/All-Pass-Scheme.png)
+![All Pass Scheme](../../README_Media/All-Pass-Scheme.png)
 
 $r$ is the [self-coupling](https://opg.optica.org/oe/fulltext.cfm?uri=oe-17-21-18971&id=186494#e03) ratio and $k$ the [cross-coupling](https://opg.optica.org/oe/fulltext.cfm?uri=oe-17-21-18971&id=186494#e03) ratio.
 Assuming no reflections back into the bus waveguide, the following can be stated:
@@ -24,11 +24,11 @@ $$ a = |t_{r}'|\alpha_{c}' $$
 
 It relates to the power attenuation coefficient $\alpha$ [1/cm] as $a^{2} = e^{-\alpha L}$, with $L$ being the round trip length.
 
-![DC Transmission Coefficients](Media/DCTransmissionCoefs.png) ![RR Transmission Coefficients](Media/RRTransmissionCoefs.png)
+![DC Transmission Coefficients](../../README_Media/DCTransmissionCoefs.png) ![RR Transmission Coefficients](../../README_Media/RRTransmissionCoefs.png)
 
 The basic spectral properties of an All-pass-filter (APF) ring resonator can easily be derived by assuming continuous wave (CW) operation and matching fields. Assuming no reflections back into the bus waveguide, can be stated that the ratio between the transmited and incident field on it is:
 
-![Transmited Field Ratio](Media/TransmitedFieldRatio.png) <em>(eq.1)</em>
+![Transmited Field Ratio](../../README_Media/TransmitedFieldRatio.png) <em>(eq.1)</em>
 
 where $\phi = \beta L$ is the single-pass phase shift with $\beta$ being the [Propagation constant](https://www.rp-photonics.com/propagation_constant.html). Notice that, if we know that $\beta = n_{eff}\frac{2\pi}{\lambda}$, then $\phi$ can be represented in funcion of wavelength as:
 
@@ -36,23 +36,23 @@ $$ \phi = n_{eff}\frac{2\pi L}{\lambda} $$
 
 By squaring the (eq.1) it can be obtained the intensity transmission:
 
-![Transmission Ratio](Media/TransmissionRatio.png) <em>(eq.2)</em>
+![Transmission Ratio](../../README_Media/TransmissionRatio.png) <em>(eq.2)</em>
 
 Can be observed that the ring will be on resonance when the single-pass phase shift $\phi$ is a multiple of 2$\pi$, or when the wavelength of the light fits a whole number of times inside the [Optical length](https://www.microscopyu.com/tutorials/specimen-optical-path-length-variations) of the ring:
 
-![Transmission Ratio](Media/WavelengthFit.png) <em>(eq.3)</em>
+![Transmission Ratio](../../README_Media/WavelengthFit.png) <em>(eq.3)</em>
 
 The effective phase shift $\varphi$ induced by the ring resonator can be calculated manipulating (eq.1):
 
-![Transmission Ratio](Media/PhaseShift.png) <em>(eq.4)</em>
+![Transmission Ratio](../../README_Media/PhaseShift.png) <em>(eq.4)</em>
 
 Considering no instrinsic losses (a=1), can be plotted for different values of the self-coupling ratio coefficient r:
 
-![Effective Phase delay r sweep](Media/Effective_phase_delay_r_sweep.png) <strong><em>(Effective phase shift delay ($\varphi$) x Single-pass phase shift ($\phi$))</em></strong>
+![Effective Phase delay r sweep](../../README_Media/Effective_phase_delay_r_sweep.png) <strong><em>(Effective phase shift delay ($\varphi$) x Single-pass phase shift ($\phi$))</em></strong>
 
 Considering $r$ = 0,85, can be plotted for different values of $a$:
 
-![Effective Phase delay a sweep](Media/Effective_phase_delay_a_sweep.png) <strong><em>(Effective phase shift delay ($\varphi$) x Single-pass phase shift ($\phi$))</em></strong>
+![Effective Phase delay a sweep](../../README_Media/Effective_phase_delay_a_sweep.png) <strong><em>(Effective phase shift delay ($\varphi$) x Single-pass phase shift ($\phi$))</em></strong>
 
 
 ## Add-drop ring resonator
@@ -61,9 +61,9 @@ When the ring resonator is coupled to two waveguides, the incident field is part
 
 The transmission to the pass and the drop port can also be derived from continuous wave (CW) operation and matching the fields:
 
-![Transmission Pass on Add-drop](Media/TransmissionPass.png)(eq.5)
+![Transmission Pass on Add-drop](../../README_Media/TransmissionPass.png)(eq.5)
 
-![Transmission Drop on Add-drop](Media/TransmissionDrop.png)(eq.6)
+![Transmission Drop on Add-drop](../../README_Media/TransmissionDrop.png)(eq.6)
 
 Where $T_{p}$ is the transmission to the pass port and $T_{d}$ the transmission to the drop port.
 
@@ -73,9 +73,9 @@ Where $T_{p}$ is the transmission to the pass port and $T_{d}$ the transmission 
 
 From equations (eq.2),(eq.5) and (eq.6) it can be derived both expressions for the full width at half maximum (FWHM) of the resonance spectrum of all-pass and add-drop ring resonators:
 
-![FWHM All pass](Media/All-pass-FWHM.png)(eq.7) <strong> (All-pass FWHM) </strong>
+![FWHM All pass](../../README_Media/All-pass-FWHM.png)(eq.7) <strong> (All-pass FWHM) </strong>
 
-![FWHM Add drop](Media/Add-drop-FWHM.png)(eq.8) <strong>  (Add-drop FWHM) </strong>
+![FWHM Add drop](../../README_Media/Add-drop-FWHM.png)(eq.8) <strong>  (Add-drop FWHM) </strong>
 
 Within a first order approximation of the dispersion, the wavelength range between two resonances or free spectral range (FSR) in function of wavelength equals:
 
@@ -91,9 +91,9 @@ $$ n_{g} = n_{eff} - \lambda_{0} \frac{d n_{eff}}{d \lambda} $$
 
 Extracting results from the equations (eq.2), (eq.5) and (eq.6), we obtain the transmission below
 
-![Transmission on pass and drop ports](Media/Transmission_on_pass_and_drop_ports.png)
+![Transmission on pass and drop ports](../../README_Media/Transmission_on_pass_and_drop_ports.png)
 
 So, it can be defined two new parameters: <strong>Finesse</strong> and <strong>Q-factor</strong>
 
-![Finesse](Media/Finesse.png)  ![Q-factor](Media/Q-factor.png)
+![Finesse](../../README_Media/Finesse.png)  ![Q-factor](../../README_Media/Q-factor.png)
 
