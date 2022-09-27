@@ -28,11 +28,7 @@ $$ \delta = 2\pi n_{eff}(\frac{1}{\lambda}-\frac{1}{\lambda_{D}})$$
 
 then, equation (3) turns into:
 
-$$ \hat{\sigma} = \frac{2\pi n_{eff}}{\lambda} - \sigma -  \frac{N\pi}{L} - \frac{1}{2} \frac{d\phi}{dz}~~~~~~(4.1)$$
-
-or
-
-$$ \hat{\sigma} = \frac{2\pi}{\lambda}(n_{eff}-\overline{\delta} n_{eff}) -  \frac{N\pi}{L} - \frac{1}{2} \frac{d\phi}{dz}~~~~~~(4.2)$$
+$$ \hat{\sigma} = \frac{2\pi n_{eff}}{\lambda} - \sigma -  \frac{N\pi}{L} - \frac{1}{2} \frac{d\phi}{dz}~~~~~~(4)$$
 
 The expressions for determining band edges properties (reflectivity and wavelength band) are the following:
 
@@ -42,6 +38,6 @@ $$ \lambda_{band edge} = \lambda_{max} \pm \frac{v\overline{\delta} n_{eff}}{2n_
 
 By using equations (2) and (6) it can be stated that:
 
-$$ \lambda_{band edge} = \lambda_{max} \pm \lambda \frac{\kappa L}{\pi N}~~~~~~(7)$$  
+$$ \lambda_{band edge} = \lambda_{max} \pm \lambda_{D} \frac{\kappa L}{\pi N}~~~~~~(7)$$  
 
 Where $\lambda_{max} = (1 + \frac{\overline{\delta} n_{eff}}{n_{eff}}) \lambda_{D} = (n_{eff} + \overline{\delta} n_{eff}) \frac{2L}{N}$
