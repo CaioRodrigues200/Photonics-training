@@ -12,13 +12,22 @@ Bragg Grating is a type of Fiber Grating, also called reflection and short-perio
 
 ![Normalized wavelength reflectivity](../../README_Media/normWv_reflectivity.png)
 
-The AC and DC coupling coefficient parts ($\kappa$ and $\sigma$ respectively) are definded as:
+# $\kappa$(kappa) and $\sigma$(sigma)
+
+For sinusoid varaition of the effective index, The AC and DC coupling coefficient parts ($\kappa$ and $\sigma$ respectively) are definded as:
 
 $$ \sigma = \frac{2\pi}{\lambda_{D}}\overline{\delta} n_{eff}~~~~~~(1)$$
 
 $$ \kappa = \frac{\pi}{\lambda_{D}}v\overline{\delta} n_{eff}~~~~~~(2)$$
 
-Where $\lambda_{D} = 2 n_{eff} \Lambda$ being the design wavelength and $\Lambda = \frac{L}{N}$. The general DC self-coupling coefficient can be defined as:
+Where 
+$$v\overline{\delta} n_{eff} = \frac{\Delta n}{2} = \frac{n_{eff2} - n_{eff1}}{2}$$
+
+and $\lambda_{D} = 2 n_{eff} \Lambda$ being the design wavelength and $\Lambda = \frac{L}{N}$. 
+
+# General coupling
+
+The general DC self-coupling coefficient can be defined as:
 
 $$ \hat{\sigma} = \delta + \sigma - \frac{1}{2} \frac{d\phi}{dz}~~~~~~(3)$$ 
 
@@ -29,6 +38,8 @@ $$ \delta = 2\pi n_{eff}(\frac{1}{\lambda}-\frac{1}{\lambda_{D}})$$
 then, equation (3) turns into:
 
 $$ \hat{\sigma} = \frac{2\pi n_{eff}}{\lambda} - \sigma -  \frac{N\pi}{L} - \frac{1}{2} \frac{d\phi}{dz}~~~~~~(4)$$
+
+# Rejection band
 
 The expressions for determining band edges properties (reflectivity and wavelength band) are the following:
 
