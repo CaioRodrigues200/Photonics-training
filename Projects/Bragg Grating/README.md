@@ -23,6 +23,10 @@ $$ \kappa = \frac{\pi}{\lambda_{D}}v\overline{\delta} n_{eff}~~~~~~(2)$$
 Where 
 $$v\overline{\delta} n_{eff} = \frac{\Delta n}{2} = \frac{n_{eff2} - n_{eff1}}{2}$$
 
+Whereas, for rectangular variation:
+
+$$ \kappa = \frac{2 \Delta n}{\lambda_{D}} $$
+
 and $\lambda_{D} = 2 n_{eff} \Lambda$ being the design wavelength and $\Lambda = \frac{L}{N}$. 
 
 # General coupling
